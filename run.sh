@@ -2,7 +2,7 @@
 
 #SBATCH --partition=unkillable                           # Ask for unkillable job
 #SBATCH --cpus-per-task=4                                # Ask for 2 CPUs
-#SBATCH --gres=gpu:a100:1                                     # Ask for 1 GPU
+#SBATCH --gres=gpu:v100:1                                     # Ask for 1 GPU
 #SBATCH --mem=30G                                        # Ask for 10 GB of RAM
 #SBATCH --time=3:00:00                                   # The job will run for 3 hours
 #SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-%j.out  # Write the log on scratch

@@ -106,9 +106,12 @@ plush girafe => girafe peluche
 
 cheese =>""",
     ]
+    start_time = time.time()
+    print("Generating")
     results = generator.generate(
         prompts, max_gen_len=256, temperature=temperature, top_p=top_p
     )
+    print(f"Generated in {time.time() - start_time:.2f} seconds")
 
     for result in results:
         print(result)
