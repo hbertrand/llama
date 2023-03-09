@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:a100l:2
 #SBATCH --mem=128G
 #SBATCH --time=1:00:00
-#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-%j.out
+#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-13b-%j.out
 
 # 1. Load the required modules
 module --quiet load anaconda/3

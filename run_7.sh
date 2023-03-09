@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #SBATCH --partition=short-unkillable
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=24
 #SBATCH --gres=gpu:a100l:1
 #SBATCH --mem=32G
 #SBATCH --time=1:00:00
-#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-%j.out
+#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-7b-%j.out
 
 # 1. Load the required modules
 module --quiet load anaconda/3
