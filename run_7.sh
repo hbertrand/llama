@@ -17,4 +17,4 @@ TARGET_FOLDER=/home/mila/p/poradaia/scratch/llama_weights
 
 # 4. Launch your job, tell it to save the model in $SLURM_TMPDIR
 #    and look for the dataset into $SLURM_TMPDIR
-torchrun --nproc_per_node 1 example.py --ckpt_dir $TARGET_FOLDER/7B/ --tokenizer_path $TARGET_FOLDER/tokenizer.model --max_batch_size 128
+torchrun --nproc_per_node 1 example.py --ckpt_dir $TARGET_FOLDER/7B/ --tokenizer_path $TARGET_FOLDER/tokenizer.model --max_batch_size 1024
