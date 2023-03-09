@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=short-unkillable
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=24
 #SBATCH --gres=gpu:a100l:2
 #SBATCH --mem=128G
 #SBATCH --time=1:00:00
