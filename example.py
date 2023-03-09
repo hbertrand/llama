@@ -107,8 +107,8 @@ peppermint => menthe poivrée
 plush girafe => girafe peluche
 
 cheese =>""",
-    ] * 103
-    prompts = prompts[:512]
+    ] * 10
+    prompts = prompts[:max_batch_size]
 
     print("Generating")
     times = []
