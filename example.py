@@ -9,6 +9,8 @@ import fire
 import time
 import json
 
+import numpy as np
+
 from pathlib import Path
 
 from fairscale.nn.model_parallel.initialize import initialize_model_parallel
@@ -106,16 +108,19 @@ plush girafe => girafe peluche
 
 cheese =>""",
     ]
-    start_time = time.time()
-    print("Generating")
-    results = generator.generate(
-        prompts, max_gen_len=256, temperature=temperature, top_p=top_p
-    )
-    print(f"Generated in {time.time() - start_time:.2f} seconds")
 
-    for result in results:
-        print(result)
-        print("\n==================================\n")
+    print("Generating")
+    times = []
+    for _ in range(10):
+        start_time = time.time()
+        results = generator.generate(
+            prompts, max_gen_len=256, temperature=temperature, top_p=top_p
+        )
+        times.append(time.time() - start_time)
+    
+    times = np.asarray(times)
+
+    print(f"Generated in {times.sum():.2f} seconds, average of {times[1:].mean():.2f} seconds per batch")
 
 
 if __name__ == "__main__":

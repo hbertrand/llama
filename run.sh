@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --partition=unkillable                           # Ask for unkillable job
-#SBATCH --cpus-per-task=4                                # Ask for 2 CPUs
-#SBATCH --gres=gpu:v100:1                                     # Ask for 1 GPU
-#SBATCH --mem=30G                                        # Ask for 10 GB of RAM
-#SBATCH --time=3:00:00                                   # The job will run for 3 hours
-#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-%j.out  # Write the log on scratch
+#SBATCH --partition=unkillable
+#SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:a100l:1
+#SBATCH --mem=32G
+#SBATCH --time=3:00:00
+#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-%j.out
 
 # 1. Load the required modules
 module --quiet load anaconda/3
