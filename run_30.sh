@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:a100l:4
 #SBATCH --mem=128G
 #SBATCH --time=1:00:00
-#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-33b-%j.out
+#SBATCH -o /home/mila/b/bertranh/dev/llama/slurm-30b-%j.out
 
 # 1. Load the required modules
 module --quiet load anaconda/3
@@ -17,4 +17,4 @@ TARGET_FOLDER=/home/mila/p/poradaia/scratch/llama_weights
 
 # 4. Launch your job, tell it to save the model in $SLURM_TMPDIR
 #    and look for the dataset into $SLURM_TMPDIR
-torchrun --nproc_per_node 4 example.py --ckpt_dir $TARGET_FOLDER/33B/ --tokenizer_path $TARGET_FOLDER/tokenizer.model  --max_batch_size 128
+torchrun --nproc_per_node 4 example.py --ckpt_dir $TARGET_FOLDER/30B/ --tokenizer_path $TARGET_FOLDER/tokenizer.model  --max_batch_size 128
